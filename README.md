@@ -31,3 +31,4 @@ Login - Simple email / password input
 Profile - User profile preview with details and image 
 
 ### Deployment Link 
+https://pixel-app-rho.vercel.app/
