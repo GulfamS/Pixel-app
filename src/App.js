@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+// import Navbar from './components/Navbar';
+import Profile from './components/Profile';
+import Login from './components/Login';
+import CreateAccount from './components/CreateAccount';
+import React from 'react';
 import './App.css';
+import Welcome from './components/Welcome';
+const {useState} = React
 
 function App() {
+  const [screen, setScreen] = useState("Welcome");
+  const [userData, setUserData] = useState({});
+
+  const renderScreen =()=>{
+    switch(screen){
+      case "create":
+        return <CreateAccount onCreate={setUserData} onSuccess={() => setScreen("profile")}/>
+      case "login":
+        return <Login onLogin={setUserData} onSuccess={() => setScreen("profile")}/>
+      case "profile":
+        return <Profile user={userData}/>
+      default:
+      return <Welcome onNavigate={setScreen}/>
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {/* <Navbar onNavigate={setScreen}/> */}
+      {renderScreen()}
     </div>
   );
 }

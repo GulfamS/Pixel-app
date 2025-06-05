@@ -1,0 +1,32 @@
+.welcome-heading {
+    font-family: Roboto;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.create-account{
+    background-color: rgb(64, 64, 246);
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 8px;
+    color: #ffffff;
+    border: none;
+    margin: 8px;
+}
+
+.already-user{
+    background-color: rgb(108, 108, 253);
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 8px;
+    color: #ffffff;
+    border: none;
+    margin: 8px;
+    margin-top: 0px;
+}
